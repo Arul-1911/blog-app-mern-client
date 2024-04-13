@@ -1,0 +1,61 @@
+.register{
+   height: calc(100vh - 50px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background:linear-gradient(rgba(225,225,225,0.5),
+   rgba(220,220,220,0.5)
+   ),
+   url('https://img.freepik.com/free-photo/top-view-desk-dark-concept-with-copy-space_23-2148459511.jpg?size=626&ext=jpg&ga=GA1.1.323850239.1712998659&semt=ais');
+   background-size: cover;
+   position: relative;
+}
+
+.registerTitle{
+   font-size: 50px;
+   font-weight: 700;
+}
+
+.registerForm{
+   margin-top: 12px;
+   display: flex;
+   flex-direction: column;
+}
+
+.registerForm > label{
+   margin: 10px 0;
+}
+
+
+.registerInput{
+   padding: 10px;
+   background-color: white;
+   border: none;
+}
+
+.registerButton{
+   margin-top: 20px;
+   cursor: pointer;
+   border: none;
+   background-color: teal;
+   color: white;
+   border-radius: 5px;
+   padding: 10px;
+}
+
+.registerLoginButton{
+   position: absolute;
+   top: 60px;
+   right: 20px;
+   background-color: lightcoral;
+   cursor: pointer;
+   border: none;
+   padding: 10px;
+   color: white;
+   border-radius: 10px;
+}
+
+.registerLoginButton:hover{
+   background-color:crimson ;
+}
