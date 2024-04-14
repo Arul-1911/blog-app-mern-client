@@ -4,8 +4,8 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background:linear-gradient(rgba(225,225,225,0.5),
-   rgba(220,220,220,0.5)
+   background:linear-gradient(rgba(205,255,255,0.5),
+   rgba(255,255,255,0.5)
    ),
    url('https://img.freepik.com/free-photo/top-view-desk-dark-concept-with-copy-space_23-2148459511.jpg?size=626&ext=jpg&ga=GA1.1.323850239.1712998659&semt=ais');
    background-size: cover;
@@ -58,4 +58,10 @@
 
 .registerLoginButton:hover{
    background-color:crimson ;
+}
+
+.errorSpan{
+   color: rgb(170, 20, 20);
+   margin-top: 13px;
+   font-weight: 600;
 }

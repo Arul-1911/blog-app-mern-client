@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Topbar from "./Components/topbar/Topbar";
@@ -7,10 +7,12 @@ import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import SinglePost from "./Components/singlePost/SinglePost";
+import { Context } from "./Context/Context";
 //imported components    
 
 function App() {
-  const user = false;
+  const{ user} = useContext(Context);
   return (
     <Router>
       <Topbar />

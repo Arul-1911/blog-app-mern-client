@@ -44,6 +44,11 @@
    padding: 10px;
 }
 
+.loginButton:disabled{
+   cursor: not-allowed;
+   background-color: coral;
+}
+
 .loginButton:hover{
    background-color: crimson;
 }

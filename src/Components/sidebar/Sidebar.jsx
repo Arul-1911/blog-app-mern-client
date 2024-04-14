@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './sidebar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,8 +7,22 @@ import {
   faPinterest,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { Back_end_url } from '../../BackendUrl';
 
 function Sidebar() {
+
+  const [cats,setCats] = useState([]);
+
+  useEffect(() => {
+      const getCats  = async () => {
+        const res = await axios.get(`${Back_end_url}/categories`);
+        setCats(res.data)
+      }
+      getCats()
+  },[])
+
   return (
     <div className="sidebar">
       <div className="sidebarItem">
@@ -25,12 +39,13 @@ function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          <li className="sidebarListItem">Tech</li>
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Music</li>
-          <li className="sidebarListItem">Style</li>
-          <li className="sidebarListItem">Sports</li>
-          <li className="sidebarListItem">Cinema</li>
+          {
+            cats.map((categ, id) => (
+              <Link to={`/?cat=${categ.name}`}className='link'>
+              <li className="sidebarListItem" key={id}>{categ.name}</li>
+              </Link>
+            ))
+          }
         </ul>
       </div>
       <div className="sidebarItem">
