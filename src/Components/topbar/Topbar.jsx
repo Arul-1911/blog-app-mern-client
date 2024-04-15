@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useContext}from 'react';
 import './topbar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,11 +7,21 @@ import {
   faPinterest,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Context } from '../../Context/Context';
 
 
 function Topbar() {
-  const user = false;
+ const { user, dispatch } = useContext(Context);
+ const navigate = useNavigate()
+
+  function handlelogout(){
+    dispatch({type:'LOGOUT'});
+    alert('Logged out Successfully')
+    navigate('/login')
+  }
+
+
   return (
     <>
       <div className="top">
@@ -43,16 +53,16 @@ function Topbar() {
                 WRITE
               </Link>
             </li>
-            <li className="topListItem">{user && "LOGOUT"}</li>
+            <li className="topListItem" onClick={handlelogout}>
+              {user && "LOGOUT"}
+            </li>
           </ul>
         </div>
         <div className="topRight">
           {user ? (
-            <img
-              className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
+            <img className="topImg" 
+            src={user.profilePic} 
+            alt="profile-pic" />
           ) : (
             <ul className="topList">
               <li className="topListItem">
@@ -60,7 +70,7 @@ function Topbar() {
                   LOGIN
                 </Link>
               </li>
-              <li className='topListItem'>
+              <li className="topListItem">
                 <Link className="link" to="/register">
                   REGISTER
                 </Link>
