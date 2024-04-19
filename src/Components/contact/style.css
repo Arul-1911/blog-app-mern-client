@@ -1,0 +1,11 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.desc{
+   line-height: 5;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   flex-wrap: wrap;
+}

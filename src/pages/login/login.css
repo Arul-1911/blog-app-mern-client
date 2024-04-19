@@ -52,6 +52,11 @@
 .loginButton:hover{
    background-color: crimson;
 }
+.loginError{
+   color: rgb(203, 18, 18);
+   margin-top: 10px;
+   text-align: center;
+}
 
 .loginRegisterButton{
    position: absolute;

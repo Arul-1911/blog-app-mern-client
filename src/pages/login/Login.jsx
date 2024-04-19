@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './login.css';
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Context } from '../../Context/Context';
 import axios from 'axios';
 import { Back_end_url } from '../../BackendUrl';
@@ -9,7 +9,8 @@ function Login() {
 
   const userRef = useRef();
   const passRef = useRef();
-  const {dispatch, isFetching } = useContext(Context)
+  const {dispatch, isFetching } = useContext(Context);
+  const [error,setError] = useState(null)
 
   async function  handleSubmit (e){
     e.preventDefault();
@@ -22,6 +23,7 @@ function Login() {
       dispatch({ type:"LOGIN_SUCCESS", payload: response.data});
     } catch (error) {
        dispatch({ type:"LOGIN_FAILURE"});
+       setError('Invalid credentials please try again..')
     }
   }
 
@@ -48,6 +50,7 @@ function Login() {
         />
         <button className="loginButton" type='submit' disabled={isFetching}>Login</button>
       </form>
+      {error && <div className='loginError'>{error}</div>}
       <button className="loginRegisterButton">
         <Link to='/register' className='link'>Register</Link>
       </button>

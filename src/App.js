@@ -9,6 +9,8 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import SinglePost from "./Components/singlePost/SinglePost";
 import { Context } from "./Context/Context";
+import About from "./Components/About/About";
+import Contact from "./Components/contact/Contact";
 //imported components    
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/settings" element={user ? <Settings /> : <Register />} />
         <Route path="/write" element={user ? <Write /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
     </Router>
   );

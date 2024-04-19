@@ -17,3 +17,16 @@ export const LoginFailure = () => ({
 export const Logout = () => ({
    type:"LOGOUT",
 })
+
+export const UpdateStart = (userCrendtials) => ({
+  type: "UPADATE_START",
+});
+
+export const UpdateSuccess = (user) => ({
+  type: "UPADATE_SUCCESS",
+  payload: user,
+});
+
+export const UpdateFailure = () => ({
+  type: "UPADATE_FAILURE",
+});

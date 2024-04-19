@@ -13,7 +13,10 @@ import { Context } from '../../Context/Context';
 
 function Topbar() {
  const { user, dispatch } = useContext(Context);
- const navigate = useNavigate()
+ const navigate = useNavigate();
+
+   const PF = "http://localhost:8080/images/";
+
 
   function handlelogout(){
     dispatch({type:'LOGOUT'});
@@ -60,9 +63,13 @@ function Topbar() {
         </div>
         <div className="topRight">
           {user ? (
-            <img className="topImg" 
-            src={user.profilePic} 
-            alt="profile-pic" />
+            <Link to="/settings">
+              <img
+                className="topImg"
+                src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM="
+                alt="profile-pic"
+              />
+            </Link>
           ) : (
             <ul className="topList">
               <li className="topListItem">

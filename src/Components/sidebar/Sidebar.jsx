@@ -32,20 +32,22 @@ function Sidebar() {
           alt=""
         />
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
+          Whether you're passionate about travel, food, technology, or any other
+          topic, Blogify empowers you to share your passion and connect with
+          like-minded individuals around the globe. Join Blogify today and start
+          sharing your voice with the world!
         </p>
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          {
-            cats.map((categ, id) => (
-              <Link to={`/?cat=${categ.name}`}className='link'>
-              <li className="sidebarListItem" key={id}>{categ.name}</li>
-              </Link>
-            ))
-          }
+          {cats.map((categ, index) => (
+            <Link to={`/?cat=${categ.name}`} className="link">
+              <li className="sidebarListItem" key={index}>
+                {categ.name}
+              </li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="sidebarItem">
