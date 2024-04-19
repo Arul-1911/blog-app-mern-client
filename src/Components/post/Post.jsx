@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 ;
 function Post({post}) {
 
-  const PF = 'http://localhost:8080/images/';
+  const PF = "https://blog-app-mern-server-k74q.onrender.com/images/";
 
   return (
     <div className="post">

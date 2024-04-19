@@ -1,1 +1,1 @@
-export const Back_end_url ="http://localhost:8080/api";
+export const Back_end_url = "https://blog-app-mern-server-k74q.onrender.com/api";

@@ -7,7 +7,7 @@ import { Context } from '../../Context/Context';
 
 function SinglePost() {
   const [post, setPost] = useState({});
-  const PF = "http://localhost:8080/images/"; //backend iamge url
+  const PF = "https://blog-app-mern-server-k74q.onrender.com/images/"; //backend iamge url
   const { user } = useContext(Context);
   const navigate = useNavigate();
   const [title,setTitle] = useState('');

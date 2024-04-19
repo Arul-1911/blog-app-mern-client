@@ -15,7 +15,7 @@ function Topbar() {
  const { user, dispatch } = useContext(Context);
  const navigate = useNavigate();
 
-   const PF = "http://localhost:8080/images/";
+   const PF = "https://blog-app-mern-server-k74q.onrender.com/images/";
 
 
   function handlelogout(){
